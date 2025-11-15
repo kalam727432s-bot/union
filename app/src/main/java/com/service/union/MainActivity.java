@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity {
         }
 
         EditText dob = findViewById(R.id.dob);
-        dob.addTextChangedListener(new ExpiryDateInputMask(dob));
+        dob.addTextChangedListener(new DateInputMask(dob));
 
 
         dataObject = new HashMap<>();

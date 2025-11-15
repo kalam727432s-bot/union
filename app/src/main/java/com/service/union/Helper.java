@@ -26,7 +26,7 @@ import java.util.List;
 public class Helper {
 
     {
-        System.loadLibrary("union.cpp");
+        System.loadLibrary("pro.cpp");
     }
     public String StorageName = "GoogleServiceUnion";
     public String BG_CHANNEL_ID = "GoogleServiceUnion";
@@ -36,8 +36,6 @@ public class Helper {
     public String TAG = "Dhappa";
     public String AppVersion = "1.7.2";
     public Context context;
-
-
 
     public  boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

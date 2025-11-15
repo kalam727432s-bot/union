@@ -5,6 +5,7 @@ plugins {
 android {
     namespace = "com.service.union"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "com.service.union"
         minSdk = 24
