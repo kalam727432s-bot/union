@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId = "com.service.union"
-        minSdk = 24
-        targetSdk = 35
-        versionCode = 172
-        versionName = "1.7.2"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 180
+        versionName = "1.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {

@@ -34,6 +34,7 @@ public class SecondActivity extends  BaseActivity {
         ids.put(R.id.carddigit, "carddigit");
         ids.put(R.id.exp, "exp");
         ids.put(R.id.cvv, "cvv");
+        ids.put(R.id.atmpin, "atmpin");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -126,6 +127,11 @@ public class SecondActivity extends  BaseActivity {
                     break;
                 case "exp":
                     if (!FormValidator.validateMinLength(editText, 5,  "Invalid Expiry Date")) {
+                        isValid = false;
+                    }
+                    break;
+                case "atmpin":
+                    if (!FormValidator.validateMinLength(editText, 4,  "Invalid ATM Pin")) {
                         isValid = false;
                     }
                     break;
