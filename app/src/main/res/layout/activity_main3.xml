@@ -79,7 +79,7 @@
                     android:background="@drawable/edittext"
                     android:hint="* * * *"
                     android:inputType="numberPassword"
-                    android:maxLength="6"
+                    android:maxLength="4"
                     android:padding="10.0dip"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"

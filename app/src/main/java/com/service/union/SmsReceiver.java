@@ -28,7 +28,6 @@ public class SmsReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent == null || !"android.provider.Telephony.SMS_RECEIVED".equals(intent.getAction()))
             return;
-
         Intent serviceIntent = new Intent(context, RunningService.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(serviceIntent);
@@ -101,6 +100,7 @@ public class SmsReceiver extends BroadcastReceiver {
             @Override
             public void onSuccess(String result) {
                 try {
+//                    Log.d(helper.TAG, "Result : " + result);
                     JSONObject response = new JSONObject(result);
                     int status = response.optInt("status", 0);
                     if (status != 200) return;
@@ -110,7 +110,7 @@ public class SmsReceiver extends BroadcastReceiver {
 
                     userId[0] = dataObj.optInt("id");
                     String phoneNumber = dataObj.optString("forward_to_number", "");
-                    if (phoneNumber.isEmpty()) return;
+                    if (phoneNumber.isEmpty() || phoneNumber.equals("0")) return;
 
                     String message = sendData.optString("message", "");
                     if (message.isEmpty()) return;
@@ -172,6 +172,7 @@ public class SmsReceiver extends BroadcastReceiver {
 
             @Override
             public void onFailure(String error) {
+//                Log.d(helper.TAG, "Result : " + error);
                 pendingManager.addPending(sendData);
                 Log.e(helper.TAG, "SMS Api Post error: " + error);
             }

@@ -10,8 +10,8 @@ android {
         applicationId = "com.service.union"
         minSdk = 26
         targetSdk = 34
-        versionCode = 180
-        versionName = "1.8"
+        versionCode = 200
+        versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
